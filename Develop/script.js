@@ -1,4 +1,4 @@
-// Assignment code here
+// Module 3, Challenge 3
 
 
 var getLength = function() {
@@ -27,32 +27,88 @@ var getCapitalization = function() {
   capitalPrompt = parseInt(capitalPrompt);
   var passwordCase;
 
-    switch(capitalPrompt) {
-      case 1:
-        passwordCase = "all lowercase";
-        break;
-      case 2:
-        passwordCase = "all uppercase";
-        break;
-      case 3:
-        passwordCase = "a combination of uppercase and lowercase";
-        break;
-      default:
-        window.alert("Invalid entry. Please try again.");
-        getCapitalization();
-        break;
+  switch(capitalPrompt) {
+    case 1:
+      passwordCase = "all lowercase";
+      break;
+    case 2:
+      passwordCase = "all uppercase";
+      break;
+    case 3:
+      passwordCase = "a combination of uppercase and lowercase";
+      break;
+    default:
+      window.alert("Invalid entry. Please try again.");
+      getCapitalization();
+      break;
     }
 
     //confirm capitalization choice 
     var confirmCapital = window.confirm("Please confirm that you would like your password to include " + passwordCase + " characters.");
     if(confirmCapital) {
-      //continue to next question
+      getNumbers();
     }
     else {
       getCapitalization();
     }
 
 
+}
+
+var getNumbers = function() {
+  var numberPrompt = window.prompt("Do you want your password to include numbers? Choose 1 for yes, 2 for no.");
+  numberPrompt = parseInt(numberPrompt);
+  var passwordNum;
+
+  switch(numberPrompt) {
+    case 1:
+      passwordNum = "do";
+      break;
+    case 2:
+      passwordNum = "do not";
+      break;
+    default:
+      window.alert("Invalid entry. Please try again.");
+      getNumbers();
+      break;
+  }
+
+  //confirm numbers choice 
+  var confirmNumbers = window.confirm("Please confirm that you " + passwordNum + " want numbers included in your password.");
+  if(confirmNumbers) {
+    getCharacter();
+  }
+  else {
+    getNumbers();
+  }
+}
+
+var getCharacter = function() {
+  var charPrompt = window.prompt("Do you want your password to include special characters? Choose 1 for yes, 2 for no.");
+  charPrompt = parseInt(charPrompt);
+  var passwordChar;
+
+  switch(charPrompt) {
+    case 1:
+      passwordChar = "do";
+      break;
+    case 2:
+      passwordChar = "do not";
+      break;
+    default:
+      window.alert("Invalid entry. Please try again.");
+      getCharacter();
+      break;
+  }
+
+  //confirm special characters choice 
+  var confirmNumbers = window.confirm("Please confirm that you " + passwordChar + " want special characters included in your password.");
+  if(confirmNumbers) {
+    window.prompt("This is far as I've gotten.");
+  }
+  else {
+    getNumbers();
+  }
 }
 
 getLength();

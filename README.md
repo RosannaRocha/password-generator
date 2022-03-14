@@ -29,7 +29,7 @@ WHEN the password is generated<br/>
 THEN the password is either displayed in an alert or written to the page<br/>
 
 <h4>Deployment Link:</h4>
-Insert link here 
+https://rosannarocha.github.io/password-generator/
 
 <br/><br/>
-Insert img or video here
+
