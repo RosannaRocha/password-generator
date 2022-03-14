@@ -33,4 +33,4 @@ https://rosannarocha.github.io/password-generator/
 
 <br/><br/>
 <h4>Preview:</h4>
-<img src="assets/images/preview_gif.gif">
+![preview_gif](https://user-images.githubusercontent.com/98558838/158207239-33fd9573-bde1-4969-b6cd-83148ae29fcc.gif)
