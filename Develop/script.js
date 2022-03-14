@@ -133,8 +133,11 @@ var ultimateGenerate = function() {
 
   var passwordCriteria = "";
 
-  if (ultimagePassword.capitalization = 1) {
+  if (ultimatePassword.capitalization = 1) {
     passwordCriteria = passwordCriteria + lowercaseChars;
+  }
+  else if (ultimatePassword.capitalization = 2) {
+    
   }
 
   window.confirm("This is a stopping point");
