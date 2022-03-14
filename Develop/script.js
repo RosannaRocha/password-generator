@@ -6,6 +6,7 @@ var ultimatePassword = {
   numbers: 0,
   characters: 0,
 }
+var password = "";
 
 var getLength = function() {
   //ask user how many characters to include in password
@@ -133,15 +134,49 @@ var ultimateGenerate = function() {
 
   var passwordCriteria = "";
 
-  if (ultimatePassword.capitalization = 1) {
+  //assign capitalization string to password criteria
+  if (ultimatePassword.capitalization === 1) {
     passwordCriteria = passwordCriteria + lowercaseChars;
   }
-  else if (ultimatePassword.capitalization = 2) {
-    
+  else if (ultimatePassword.capitalization === 2) {
+    passwordCriteria = passwordCriteria + uppercaseChars;
+  }
+  else if (ultimatePassword.capitalization === 3) {
+    passwordCriteria = passwordCriteria + lowercaseChars + uppercaseChars;
+  }
+  else {
+    window.confirm("An error has occurred. Goodbye.");
   }
 
-  window.confirm("This is a stopping point");
+  //assign numbers string to password criteria
+  if (ultimatePassword.numbers === 1) {
+    passwordCriteria = passwordCriteria + numberChars;
+  }
+  else if (ultimatePassword.numbers === 2) {
+    //no change to password criteria
+  }
+  else {
+    window.confirm("An error has occurred. Goodbye.");
+  }
 
+  //assign characters string to password criteria
+  if (ultimatePassword.characters === 1) {
+    passwordCriteria = passwordCriteria + specialChars;
+  }
+  else if (ultimatePassword.characters === 2) {
+    //no change to password criteria
+  }
+  else {
+    window.confirm("An error has occurred. Goodbye.");
+  }
+
+  for (var i = 0; i <= ultimatePassword.length; i++) {
+    var randomNumber = Math.floor(Math.random() * passwordCriteria.length);
+    password += passwordCriteria.substring(randomNumber, randomNumber +1);
+  }
+  document.getElementById("password").value = password;
+
+  console.log(password);
 }
 
 // Get references to the #generate element
@@ -150,7 +185,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   getLength();
-  var password = generatePassword();
+  
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
