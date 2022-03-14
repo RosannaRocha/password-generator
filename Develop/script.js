@@ -131,6 +131,12 @@ var ultimateGenerate = function() {
   var numberChars = "0123456789";
   var specialChars = "!#$%&()*+?@^_~";
 
+  var passwordCriteria = "";
+
+  if (ultimagePassword.capitalization = 1) {
+    passwordCriteria = passwordCriteria + lowercaseChars;
+  }
+
   window.confirm("This is a stopping point");
 
 }
