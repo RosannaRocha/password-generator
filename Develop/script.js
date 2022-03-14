@@ -1,15 +1,22 @@
 // Module 3, Challenge 3
 
+var ultimatePassword = {
+  length: 0,
+  capitalization: 0,
+  numbers: 0,
+  characters: 0,
+}
 
 var getLength = function() {
   //ask user how many characters to include in password
   var passwordLength = window.prompt("How long do you want your password to be? Choose a number between 8 and 128 characters.");
-  
+  passwordLength = parseInt(passwordLength);
+
   if (passwordLength >= 8 && passwordLength <= 128) {
     //confirm
     var confirmLength = window.confirm("Please confirm that you would like your password to be " + passwordLength + " characters.");
     if (confirmLength) {
-      //continue to next question
+      ultimatePassword.length = passwordLength;
       getCapitalization();
     }
     else {
@@ -30,12 +37,15 @@ var getCapitalization = function() {
   switch(capitalPrompt) {
     case 1:
       passwordCase = "all lowercase";
+      ultimatePassword.capitalization = 1;
       break;
     case 2:
       passwordCase = "all uppercase";
+      ultimatePassword.capitalization = 2;
       break;
     case 3:
       passwordCase = "a combination of uppercase and lowercase";
+      ultimatePassword.capitalization = 3;
       break;
     default:
       window.alert("Invalid entry. Please try again.");
@@ -63,9 +73,11 @@ var getNumbers = function() {
   switch(numberPrompt) {
     case 1:
       passwordNum = "do";
+      ultimatePassword.numbers = 1;
       break;
     case 2:
       passwordNum = "do not";
+      ultimatePassword.numbers = 2;
       break;
     default:
       window.alert("Invalid entry. Please try again.");
@@ -91,9 +103,11 @@ var getCharacter = function() {
   switch(charPrompt) {
     case 1:
       passwordChar = "do";
+      ultimatePassword.characters = 1;
       break;
     case 2:
       passwordChar = "do not";
+      ultimatePassword.characters = 2;
       break;
     default:
       window.alert("Invalid entry. Please try again.");
@@ -104,20 +118,29 @@ var getCharacter = function() {
   //confirm special characters choice 
   var confirmNumbers = window.confirm("Please confirm that you " + passwordChar + " want special characters included in your password.");
   if(confirmNumbers) {
-    window.prompt("This is far as I've gotten.");
+    ultimateGenerate();
   }
   else {
     getNumbers();
   }
 }
 
-getLength();
+var ultimateGenerate = function() {
+  var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
+  var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numberChars = "0123456789";
+  var specialChars = "!#$%&()*+?@^_~"
+
+  window.confirm("This is a stopping point");
+
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  getLength();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
