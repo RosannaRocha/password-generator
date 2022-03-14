@@ -129,7 +129,7 @@ var ultimateGenerate = function() {
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numberChars = "0123456789";
-  var specialChars = "!#$%&()*+?@^_~"
+  var specialChars = "!#$%&()*+?@^_~";
 
   window.confirm("This is a stopping point");
 
